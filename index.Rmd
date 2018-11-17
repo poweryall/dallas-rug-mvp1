@@ -93,7 +93,7 @@ Shopping for electricity involves:
 
 - Created by PUCT to help residential consumers
 - REPs report plan details to PTC
-    + Average Price / kWH at usage: 500, 1000 and 2000 kWh / month
+    + Average Price / kWh at usage: 500, 1000 and 2000 kWh / month
 - user: ZIP code => TDSP => Electricity Plans
 - Default assumption: 1000 kWh / month, each month
 - Allows filtering
@@ -212,10 +212,10 @@ Five ~~easy~~ steps:
     + it is possible to avoid using a second, NOSQL, DB
 - file storage
     + `aws.s3`: https://github.com/cloudyr/aws.s3
-- `rmarkdown` reports *(example)*
+- `rmarkdown` reports
     + simple ["cron job"](https://www.ostechnix.com/a-beginners-guide-to-cron-jobs/)
     + **RStudio Connect** allows schedule of rmarkdown reports + email
-- internal web app *(example)*
+- internal web app
 
 
 ## Consumer Web App
@@ -356,9 +356,10 @@ function(tdsp = character()) {
 
 ## Consumer Web App
 
-**(Limited) Demo**
+**Limited Demo**
 
-- selected plans: Oncor / 12 months / fixed
+- selected plans: Oncor, 12 months, fixed, not prepaid, not Time of Use
+- as of November 16, 2018 (limited future updates)
 
 <br>
 

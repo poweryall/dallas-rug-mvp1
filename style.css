@@ -42,19 +42,72 @@ code {
 
 /*background picture as logo on title page*/
 slides > slide.title-slide {
-    background-image: url(Numeract_Logo_Tag.png);
+    background-image: url(numeract_logo_tag.png), url(power_yall_logo.png);
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 75%;
+    background-position: left top, 93% 85%;
+    background-size: 75%, 30%;
 }
 
 
-/*slide picture
-slides > slide[data-slide-num= "14"]
+/*slide picture*/
+slides > slide[data-slide-num= "3"]
 {
-    background-image: url(plumber.png);
+    background-image: url(numeract_logo.png), url(power_yall_logo.png);
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: 2% 23%, 2% 65%;
+    background-size: 30%, 25%;
+}
+
+
+slides > slide[data-slide-num= "16"]
+{
+    background-image: url(shiny.png);
+    background-repeat: no-repeat;
+    background-position: 70% 18%;
+    background-size: 10%;
+}
+
+
+slides > slide[data-slide-num= "20"]
+{
+    background-image: url(plumber_2.png);
+    background-repeat: no-repeat;
+    background-position: 70% 95%;
+    background-size: 30%;
+}
+
+
+slides > slide[data-slide-num= "23"]
+{
+    background-image: url(plumber_1.png);
+    background-repeat: no-repeat;
+    background-position: 70% 5%;
+    background-size: 10%;
+}
+
+
+slides > slide[data-slide-num= "24"]
+{
+    background-image: url(power_yall_logo.png);
+    background-repeat: no-repeat;
+    background-position: 90% 10%;
     background-size: 15%;
 }
-*/
+
+
+slides > slide[data-slide-num= "27"]
+{
+    background-image: url(docker.png), url(rstudio.png);
+    background-repeat: no-repeat;
+    background-position: 90% 40%, 90% 50%;
+    background-size: 8%, 8%;
+}
+
+
+slides > slide[data-slide-num= "29"]
+{
+    background-image: url(power_yall_logo.png);
+    background-repeat: no-repeat;
+    background-position: 90% 10%;
+    background-size: 15%;
+}

@@ -50,7 +50,7 @@ output:
 
 1. Retail electricity market in Texas
 2. Motivation
-3. Plan Processing
+3. Data Processing
 4. Consumer Web App
 5. Remarks
 6. Future ...
@@ -66,8 +66,8 @@ Status: **Deregulated**
 
 Shopping for electricity involves:
 
-- comparing provider prices, 
-- reading fine print 
+- comparing provider prices
+- reading the fine print 
 - ...
 - taking a gamble
 
@@ -92,25 +92,25 @@ Shopping for electricity involves:
 [Power To Choose](http://www.powertochoose.org/) website
 
 - Created by PUCT to help residential consumers
-- REPs report prices to PTC
-    + report Average Price / kWH at usage: 500, 1000 and 2000 kWh / month
+- REPs report plan details to PTC
+    + Average Price / kWH at usage: 500, 1000 and 2000 kWh / month
 - user: ZIP code => TDSP => Electricity Plans
-- Default assumption: 1000 kWh / month
+- Default assumption: 1000 kWh / month, each month
 - Allows filtering
 - Allows sorting by price
-- Consumers select a plan, go to REP website and enter into a contract
+- Consumers select a plan, go to the REP website and enter into a contract
 
 
 ## Power To Choose (PTC)
 
 - Currently, about 170 plan for the Dallas area (Oncor) listed on PTC
-    + There are 9 TDSPs
+    + there are 9 TDSPs
 - Possible to export data (CSV format)
-- The devil is in the detail, i.e. the fine print
-    + Transportation and Distribution Fees
+- The devil is in the detail, i.e. the Electricity Facts Label
+    + transportation and distribution Fees (by TDSP)
     + base charges
-    + fees/credits depending on amount of electricity usage
-    + energy charges
+    + fees / credits that depend on amount of electricity usage
+    + energy charges (per kWh)
 - REPs want to be ranked first when using the default settings
 - PUCT walks a thin line
 
@@ -120,15 +120,15 @@ Shopping for electricity involves:
 ## Incomplete information for consumers
 
 - Quality and functionality of the REP website not present
-    + emails 
+    + email / communication
     + easy payment setup
     + security
     + user friendly
 - Electricity usage not constant from month to month:
-    + summer usage about 2x - 3x higher than early spring
+    + summer usage much higher than early spring
 - Electricity usage depends on:
     + house characteristics
-    + habits (e.g. # kids leaving the door open)
+    + habits, e.g., kids leaving the door open
 
 **Ultimately, electricity usage is consumer specific!**
 
@@ -137,12 +137,12 @@ Shopping for electricity involves:
 
 [Smart Meter Texas](https://www.smartmetertexas.com) portal
 
-- For residential and business consumers with advanced meters
+- For residential and business consumers with Advanced Meters
 - Electricity usage for the last 12 month at 15 min intervals
 - Registration is not easy
 - Usability problems
 - Consumers can allow third parties to receive usage data
-- Major revisions planed in the next few years
+- Major revisions planed in the future
 
 
 ## Incomplete information for REPs
@@ -153,7 +153,7 @@ Shopping for electricity involves:
     + renewal discounts
 - Difficult to build brand awareness
 - Few REPs are aware of
-    + changes competition offering
+    + changes in the offer of the competition
     + own website performance
     + why consumers switch
     
@@ -162,10 +162,12 @@ Shopping for electricity involves:
 
 ### **How to solve the problem?**
 
+<br>
+
 Five ~~easy~~ steps:
 
 1. Download all plans
-2. For each plan, construct its `Price(Usage)` function
+2. For each plan, construct its **Total Cost( Usage )** function
 3. Estimate your (future) monthly usage 
 4. Calculate total cost (for each plan)
 5. Pick the lowest cost plan that satisfies other subjective criteria
@@ -175,7 +177,7 @@ Five ~~easy~~ steps:
 
 ### **How to solve the problem _with R_?**
 
-Tasks to accomplish:
+<br>
 
 - obtain the plan info
 - connect to database
@@ -193,27 +195,27 @@ Tasks to accomplish:
 > - connect to database  
     `DBI`, `RPostgres`, `aws.s3`
 > - calculation engine  
-    *NLP magic*, `pdftools`, `tidyverse`
+    NLP magic, `pdftools`, `tidyverse`
 > - internal web app / external (consumer) web app  
-    `Shiny`, `ggplot2`, `DT`
+    `Shiny`, `ggplot2`, `DT`, ...
 > - scalable MVP  
     `future`, `plumber`
 > - use best practices  
     `loggr`, `config`, `fs`, `pool`
 
 
-## Plan Processing
+## Data Processing
 
 - database: PostgreSQL
     + `jsonb` fields ==> can be indexed
     + https://www.postgresql.org/docs/10/functions-json.html
-    + possible to avoid using a NOSQL DB (e.g., MongoDB)
+    + it is possible to avoid using a second, NOSQL, DB
 - file storage
     + `aws.s3`: https://github.com/cloudyr/aws.s3
-- `rmarkdown` reports
+- `rmarkdown` reports *(example)*
     + simple ["cron job"](https://www.ostechnix.com/a-beginners-guide-to-cron-jobs/)
-    + **RStudio Connect** allow schedule of rmarkdown reports + email
-- internal web app
+    + **RStudio Connect** allows schedule of rmarkdown reports + email
+- internal web app *(example)*
 
 
 ## Consumer Web App
@@ -418,7 +420,7 @@ Best practices: [The twelve-factor app](https://12factor.net/)
     + serve with `plumber`
     + caching
 4. Dev Ops
-    + find best way to scale container & Shiny App
+    + find best way to scale containers & Shiny App
 5. Python module to connect to Smart Meter Texas
 6. User login + settings
 

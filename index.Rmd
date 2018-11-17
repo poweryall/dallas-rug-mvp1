@@ -1,0 +1,34 @@
+---
+title: "Power Y'all: Applying R to electricity pricing in Texas"
+author: "Mike Badescu, PhD"
+date: "November 17, 2018"
+output:
+  ioslides_presentation:
+    css: style.css
+    highlight: pygments
+    widescreen: yes
+    fig_caption: false
+---
+
+## Power Y'all: Applying R to electricity pricing in Texas
+
+- Slides: <https://poweryall.github.io/dallas-rug-mvp1/>  
+
+<br>
+
+**Mike Badescu, PhD**  
+
+- [*mike*.*badescu@numeract*.*com*](*mike*.*badescu@numeract*.*com*)  
+- @[MikeBadescu](https://twitter.com/MikeBadescu)  
+<br>
+
+**Dallas R Users Group**  
+*November 17, 2018*
+
+
+## About
+
+**[Numeract LLC](http://numeract.com/)**
+
+- Data Science and Economics / Finance consulting services  
+- Technology Stack: (Postgre)SQL, R, Python, Spark, Docker, AWS

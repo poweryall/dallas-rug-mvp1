@@ -1,0 +1,60 @@
+/* Whole document: */
+body {
+  font-family: Source Sance Pro;
+  font-size: 16pt;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Open Sance;
+  font-size: 24pt;
+}
+
+slides > slide {
+  color: #444444;
+}
+
+pre {
+  font-weight: 500;
+}
+
+.prettyprint {
+  background-color: #f0f0f0;
+}
+
+code {
+  font-weight: 500;
+}
+
+
+/* No Logo on title page */
+.gdbar img {
+  width: 0px !important;
+  height: 0px !important;
+  margin: 0px 0px;
+}
+
+.gdbar {
+  width: 0px !important;
+  height: 0px !important;
+}
+
+
+/*background picture as logo on title page*/
+slides > slide.title-slide {
+    background-image: url(Numeract_Logo_Tag.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 75%;
+}
+
+
+/*slide picture
+slides > slide[data-slide-num= "14"]
+{
+    background-image: url(plumber.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 15%;
+}
+*/
